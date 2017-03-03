@@ -1,0 +1,215 @@
+@import bourbon
+@import "_fonts.sass"
+@import "_vars.sass"
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.6
+	font-family: "OpenSansRegular", sans-serif
+	overflow-x: hidden
+	color: #222
+
+h1, .h2, h2, h3, h4, h5, h6
+	font-family: "OpenSansLight", sans-serif
+	font-weight: normal
+
+h1
+	font-size: 41px
+	line-height: 1.2
+
+.h2, h2
+	font-size: 32px
+
+h3, h4
+	font-family: "OpenSansSemiBold", sans-serif
+	text-transform: uppercase
+	font-size: 15px
+
+h4
+	font-size: 13px
+
+a
+	color: $accent
+	outline: none !important
+
+.text-center
+	text-align: center
+
+.hidden
+	display: none
+
+b, strong
+	font-family: "OpenSansSemiBold", sans-serif
+	font-weight: normal
+
+.responsive-img
+	max-width: 100%
+
+.main-head
+	background-image: url("../img/header_bg.jpg") 
+	background-color: #c08936
+	background-size: cover
+	background-position: top center
+	min-height: 100%
+	overflow: hidden
+
+.head-top-line
+	max-height: 120px
+	margin-top: 50px
+	position: relative
+	padding: 0px 15px 15px 15px
+	vertical-align: middle
+
+.language-tooggle-wrap
+	position: absolute
+	top: -35px
+	right: 35px
+	display: block
+	border: 1px solid darken($btn, 20%)
+	border-radius: 3px
+	background-color: $btn
+	vertical-align: middle
+	a
+		color: #fff
+		font-size: 12px
+		text-decoration: none
+		margin: 0	5px
+		.flag-ru
+			width: 30px
+			height: 20px
+			margin: 3px 3px
+	&:hover
+		background-color: darken($btn, 10%)
+
+.logo-wrap
+	display: block
+	width: 100%
+	opacity: 1
+
+.logo
+	margin: 0 auto
+	display: block
+	width: 100%
+	max-height: 120px
+	overflow: hidden
+	img
+		width: 100%
+
+.site-name
+	height: 100%
+	margin: 30px auto
+	h1
+		font-family: "PlayfairDisplay", sans-serif
+		font-size: 48px
+		text-align: center
+		margin: 15px auto
+		color: #000
+		letter-spacing:  4px
+		font-weight: bold
+
+.button
+	font-family: "OpenSansBold", sans-serif
+	font-style: italic
+	display: inline-block
+	border: none
+	background-color: $btn
+	color: $btntxt
+	font-size: 14px
+	letter-spacing:  2px
+	text-transform: uppercase
+	padding: 8px 14px
+	border-radius: 5px
+	box-shadow: 0 3px 0 darken($btn, 10%)
+	transition: all .15s ease
+	text-align: center
+	&:hover, &:focus
+		color: #fff
+		text-decoration: none
+	&:hover
+		background-color: darken($btn, 10%)
+	&:active
+		background-color: darken($btn, 10%)
+		transform: translateY(2px)	
+
+.head-top-line
+	margin-bottom: 25px
+	.button
+		margin-top: 14px
+		margin-bottom: 14px
+		min-width: 230px
+		&:last-child
+			margin-top: 0
+			margin-bottom: 0
+
+h2
+	text-align: center
+	font-family: "OpenSansRegular",sans-serif
+	font-size: 24px
+	margin: 10px auto 0
+
+.products
+	li
+		display: block
+		list-style: none
+		margin: 10px 20px
+		padding: 10px
+		border: 1px solid #f0edeb
+		border-radius: 3px
+		a
+			display: inline-block
+		.products-list-img-wrapper
+			margin-right: 15px 
+			width: 120px
+			height: 120px
+		.products-title
+			font-size: 16px
+			text-transform: uppercase
+			vertical-align: center
+			&:hover
+				text-decoration: none
+
+.product-details
+	margin-bottom: 50px
+
+.prod-img-wrap
+	text-align: center
+
+.descript-text
+	padding: 10px 15px
+	font-size: 14px
+
+.reviews-wrapper
+	h3
+		text-align: center
+	.reviews-list
+		padding-left: 0
+		margin-bottom: 35px
+		.reviews-list-item
+			list-style-type: none
+			background-color: #EEEEEE
+			padding: 0	15px
+			margin-bottom: 10px
+			border: 1px solid #999
+			border-radius: 5px
+			.rate
+				color: #777
+			span
+				font-size: 14px
+	.new-review
+		i
+			color: #E9B009
+			font-size: 20px
+		.review-text-area
+			width: 100%
+			font-size: 14px
+			border: 1px solid #999
+			border-radius: 5px
+			margin-bottom: 15px
+			padding: 5px 15px
+			&:focus
+				border: 1px solid $btn
+				box-shadow: 0 0px 5px lighten($btn, 10%)
+		.button
+			float: right

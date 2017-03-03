@@ -1,0 +1,30 @@
+<h1>Login please!</h1>
+<div>
+	<form action="" name="loginForm">
+		<div ng-class="{ 'has-error' : loginForm.username.$invalid }">
+			<label>Username:</label>
+			<input type="username" name="username" class="" ng-model="$ctrl.user.username" placeholder="Username" required="" autofocus="">
+			<p ng-show="loginForm.username.$invalid" >Enter a valid username</p>
+		</div>
+		
+		<br>
+
+		<div ng-class="{ 'has-error' : loginForm.password.$invalid }">
+			<label>Password:</label>
+			<input type="password" name="password" class="" ng-model="$ctrl.user.password"  placeholder="Password" required="" ng-minlength="4">
+			<p ng-show="loginForm.password.$invalid" >Enter a password</p>
+			<p ng-show="loginForm.password.$error.minlength">Min password length is 4 characters.</p>
+		</div>
+
+		<br>
+		<label for="">
+			<a href="#">Sign In</a>
+		</label>
+		<br>
+		<button type="button" ng-click="$ctrl.sendData()" ng-disabled="!$ctrl.user.username || !$ctrl.user.password">Register</button>
+	</form>
+</div>
+<h2 ng-show="$ctrl.success">Login completed successfully!</h2>
+<h2 ng-show="$ctrl.message">{{$ctrl.message}}</h2>
+
+

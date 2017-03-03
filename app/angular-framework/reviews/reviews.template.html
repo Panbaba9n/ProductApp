@@ -1,0 +1,36 @@
+<div class="col-md-8 col-md-offset-2">
+	<div class="reviews-wrapper">
+		<h3>Отзывы:</h3>
+		<ul class="reviews-list">
+			<li class="reviews-list-item" ng-repeat="review in $ctrl.reviews">
+				<p class="user-name">"{{review.created_by.username}}" {{review.created_by.first_name}} {{review.created_by.last_name}} at: {{review.created_at}}</p>
+				<p class="rate">Rate: {{review.rate}}</p>
+				<span>{{review.text}}</span>
+			</li>                               
+		</ul>
+
+		<div class="new-review">
+			
+			<form name="reviewForm">
+				
+
+				<div ng-controller="RatingCtrl">
+					<h4>Your rate:</h4>
+					<span uib-rating ng-model="rate" max="max" read-only="isReadonly" on-hover="hoveringOver(value)" on-leave="overStar = null" titles="['1','2','3']"  aria-labelledby="default-rating"></span>
+					<span id="starRate" class="label" ng-class="{'label-primary': percent<30}" ng-show="overStar && !isReadonly">{{percent}}</span>					
+				</div>
+				
+				<p>UserName:{{$ctrl.username}}</p>
+
+				<textarea id="review-content" class="review-text-area" placeholder="Оставьте Ваш отзыв..." name="usertext" ng-model="$ctrl.usertext" required=""></textarea>
+				<a ng-href="" class="button" ng-click="$ctrl.sendReview()" ng-disabled="!$ctrl.usertext">Отправить</a>
+
+			</form>
+
+			<span ng-show="$ctrl.sendetReview">You review was sendet</span>
+			<h2 ng-show="$ctrl.notAutorised">Get login first</h2>
+
+		</div>
+	</div>
+</div>
+

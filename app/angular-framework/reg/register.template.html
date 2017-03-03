@@ -1,0 +1,27 @@
+<h1>Register yourself please!</h1>
+<div>
+	<form action="" name="regForm">
+		<div ng-class="{ 'has-error' : regForm.username.$invalid }">
+			<label>Username:</label>
+			<input type="username" name="username" class="" ng-model="$ctrl.user.username" placeholder="Username" required="" autofocus="">
+			<p ng-show="regForm.username.$invalid" >Enter a valid username</p>
+		</div>
+		
+		<br>
+
+		<div ng-class="{ 'has-error' : regForm.password.$invalid }">
+			<label>Password:</label>
+			<input type="password" name="password" class="" ng-model="$ctrl.user.password"  placeholder="Password" required="" ng-minlength="4">
+			<p ng-show="regForm.password.$invalid" >Enter a password</p>
+			<p ng-show="regForm.password.$error.minlength">Min password length is 4 characters.</p>
+		</div>
+
+		<br>
+		<label for="">
+			<a href="#">Sign In</a>
+		</label>
+		<br>
+		<button type="button" ng-click="$ctrl.sendData()" ng-disabled="!$ctrl.user.username || !$ctrl.user.password">Register</button>
+	</form>
+</div>
+<h2 ng-show="$ctrl.success">Registration completed successfully!</h2>

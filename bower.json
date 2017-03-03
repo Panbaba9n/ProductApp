@@ -1,0 +1,26 @@
+{
+  "name": "LiteIt",
+  "description": "Testovoe zadanie",
+  "main": "index.js",
+  "authors": [
+    "Vladimir Kolesnikov"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "test",
+    "progect"
+  ],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/libs/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-local-storage": "^0.5.2",
+    "selectize": "^0.12.1"
+  }
+}

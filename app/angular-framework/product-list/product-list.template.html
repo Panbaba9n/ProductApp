@@ -1,0 +1,31 @@
+<div>
+
+	<ul class='products'>
+		<li ng-repeat="product in $ctrl.products ">
+			<div id="{{product.id}}" class="hidden getThisId"></div>
+			<a href="#/products/{{product.id}}" class="products-list-img-wrapper "> 
+				<img ng-src="http://smktesting.herokuapp.com/static/{{product.img}}" alt="{{product.title}}" class="responsive-img">
+			</a>
+			<a href="#/products/{{product.id}}" class="products-title">{{product.title}}</a>
+		</li>
+	</ul>
+
+</div>
+
+
+
+
+
+<!-- <div>
+
+	<ul class='products'>
+		<li ng-repeat="product in $ctrl.products | filter:$ctrl.query">
+			<a href="#!/phones/{{product.id}}" class="products-list-img-wrapper ">
+				Type URL
+				<img ng-src="http://angular.github.io/angular-phonecat/step-9/app/{{product.imageUrl}}" alt="{{product.name}}" class="responsive-img">
+			</a>
+			<a href="#!/products/{{product.id}}" class="products-title">{{product.name}}</a>
+		</li>
+	</ul>
+
+</div> -->
