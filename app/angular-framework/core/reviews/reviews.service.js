@@ -10,13 +10,13 @@
         return $resource('http://smktesting.herokuapp.com/api/reviews/:productId', {}, {
           query: {
             method: 'GET',
-            params: {productId: 1},
+            params: {},
             isArray: true
           },
           send: {
             method: 'POST',
             url: 'http://smktesting.herokuapp.com/api/reviews/:productId',        
-            params: {productId: 1},
+            params: {},
             headers: {'Authorization': 'Token ' + localStorageService.get('token')},
           }
         });

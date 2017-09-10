@@ -9,17 +9,19 @@
 
   function RegisterController(Authenticator) {
     var self = this;
+    
     self.success = false;
+    self.sendData = sendData;
 
-    self.sendData = function() {
+    /////
 
+    function sendData() {
       Authenticator.register({}, {
           "username": self.user.username,
           "password": self.user.password
         }, function(response){
           self.success = response.success;
         });
-
     };
 
   };

@@ -9,7 +9,15 @@
 
   function ProductListController(Products) {
     var self = this
-    self.products = Products.query();
+    self.products = [];
+
+    activate();
+
+    /////
+
+    function activate() {
+      return  self.products = Products.query();
+    };
   };
 
 })();

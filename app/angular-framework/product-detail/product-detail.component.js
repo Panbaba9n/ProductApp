@@ -10,9 +10,18 @@
   function ProductDetailController($routeParams, Products) {          
     var self = this;
     self.productId = $routeParams.productId;
-    self.products = Products.query({}, function(products) {
-      self.productElement = products[self.productId - 1];
-    });
+    self.products = [];
+    self.productElement = [];
+
+    activate();
+
+    /////
+
+    function activate() {
+      return self.products = Products.query({}, function(products) {
+        self.productElement = products[self.productId - 1];
+      });
+    };
   };
   
 })();

@@ -13,7 +13,9 @@ gulp.task('browser-sync', ['styles', 'scripts'], function() {
 				server: {
 						baseDir: "./app"
 				},
-				notify: false
+				notify: false,
+				// Open the site in Chrome
+				browser: "Chrome"
 		});
 });
 

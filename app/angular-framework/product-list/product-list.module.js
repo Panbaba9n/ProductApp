@@ -1,6 +1,6 @@
 (function() {
   'use strict';
 
-  angular.module('productList', ['core.products']);
+  angular.module('productList', ['core']);
 
 })();

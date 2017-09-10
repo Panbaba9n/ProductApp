@@ -8,40 +8,62 @@
   });
 
   function ReviewsListController($routeParams, Reviews, CoreMemory) {
-    var self = this
-    self.reviews = {};
-    self.token = CoreMemory.loadToken(); // lolol
-    self.productId = $routeParams.productId;
-    self.username = CoreMemory.loadUsername();
-    self.sendetReview = false;
-    self.notAutorised = false;
-    
+    var self = this;
 
-    self.getReview = function getReviews() {
-      self.reviews = Reviews.getOverHere().query({productId: self.productId});
+    self.reviews = {};    
+    self.productId = ""; 
+    self.username = "";
+    self.token = "";
+    self.rate = "";
+    self.usertext = "";
+    self.sendReview = sendReview;
+
+    getReviews();
+    initNewReview();
+
+    /////
+
+    function getReviews() {
+      getProductId();      
+      return self.reviews = Reviews.getOverHere().query({productId: self.productId});
+    }
+
+    function getProductId() {
+      self.productId = $routeParams.productId;
     };
-    self.getReview();
 
     /**
     * New Review
     **/
-    self.getStarRate = function getStarRate() {
-      var scope = angular.element($("#starRate")).scope();
-      return self.rate = scope.percent;
+    function initNewReview() {
+      getUsername();
+      getToken();
     };
 
-    self.sendReview = function() {
-      self.getStarRate();
+    function sendReview() {
+      getStarRate();
       Reviews.getOverHere().send({
         productId: self.productId
       }, {
         'rate': self.rate,
         'text': self.usertext        
       }, function() {
-        self.getReview(); 
+        getReviews(); 
         $('#review-content').val("");
       });
+    };
 
+    function getStarRate() {
+      var scope = angular.element($("#starRate")).scope();
+      return self.rate = scope.percent;
+    };
+
+    function getUsername() {
+      self.username = CoreMemory.loadUsername();
+    };
+
+    function getToken() {
+      self.token = CoreMemory.loadToken();
     };
 
   };

@@ -9,19 +9,15 @@
 
   function LoginController(CoreMemory, Authenticator) {
     var self = this;
+
     self.message = false;
     self.success = false;
     self.token = CoreMemory.loadToken();
+    self.sendData = sendData;
 
-    var saveToken = function saveToken(token) {
-      return CoreMemory.saveToken(token);
-    };
-    var saveUsername = function saveUsername(username) {
-      return CoreMemory.saveUsername(username);
-    };       
+    /////
 
-    self.sendData = function() {
-
+    function sendData() {
       Authenticator.login({}, {
           "username": self.user.username,
           "password": self.user.password
@@ -30,11 +26,16 @@
           self.success = response.success;
           saveToken(response.token);
         });
-
       saveUsername(self.user.username);
+    };
 
-    }        
+    function saveToken(token) {
+      return CoreMemory.saveToken(token);
+    };
+    function saveUsername(username) {
+      return CoreMemory.saveUsername(username);
+    };          
 
-  }
+  };
 
 })();

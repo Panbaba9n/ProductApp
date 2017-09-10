@@ -13,7 +13,6 @@
 			
 			<form name="reviewForm">
 				
-
 				<div ng-controller="RatingCtrl">
 					<h4>Your rate:</h4>
 					<span uib-rating ng-model="rate" max="max" read-only="isReadonly" on-hover="hoveringOver(value)" on-leave="overStar = null" titles="['1','2','3']"  aria-labelledby="default-rating"></span>
@@ -26,9 +25,6 @@
 				<a ng-href="" class="button" ng-click="$ctrl.sendReview()" ng-disabled="!$ctrl.usertext">Отправить</a>
 
 			</form>
-
-			<span ng-show="$ctrl.sendetReview">You review was sendet</span>
-			<h2 ng-show="$ctrl.notAutorised">Get login first</h2>
 
 		</div>
 	</div>
